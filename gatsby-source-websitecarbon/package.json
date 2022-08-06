@@ -1,0 +1,22 @@
+{
+    "name": "gatsby-source-websitecarbon",
+    "version": "1.0.0",
+    "description": "Gatsby source for Website Carbon badge api",
+    "keywords": [
+        "gatsby",
+        "gatsby-plugin",
+        "website-carbon"
+    ],
+    "author": "Clément Joye",
+    "license": "MIT",
+    "peerDependencies": {
+        "gatsby": "^2.0.0 || ^3.0.0 || ^4.0.0"
+    },
+    "dependencies": {
+        "node-fetch": "^2.6.7"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/clement-joye/gatsby-source-websitecarbon"
+    }
+}

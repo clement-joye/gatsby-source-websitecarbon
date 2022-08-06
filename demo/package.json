@@ -1,0 +1,16 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "dev": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "^4.16.0",
+    "gatsby-source-websitecarbon": "file:../gatsby-source-websitecarbon",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
