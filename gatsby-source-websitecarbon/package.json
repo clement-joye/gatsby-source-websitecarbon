@@ -1,6 +1,6 @@
 {
     "name": "gatsby-source-websitecarbon",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Gatsby source for Website Carbon badge api",
     "keywords": [
         "gatsby",
