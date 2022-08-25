@@ -44,7 +44,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         type WebsiteCarbonBadge implements Node {
             id: ID!
             co2: String!
-            rank: String!
+            percentage: String!
             url: String!
         }`
     )

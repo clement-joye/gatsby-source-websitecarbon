@@ -42,6 +42,7 @@ const query = graphql`
     websiteCarbonBadge {
       co2
       percentage
+      url
     }
   }
 `
