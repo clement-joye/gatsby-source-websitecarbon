@@ -43,9 +43,9 @@ exports.createSchemaCustomization = ({ actions }) => {
     createTypes(`
         type WebsiteCarbonBadge implements Node {
             id: ID!
-            co2: String!
-            percentage: String!
-            url: String!
+            co2: String
+            percentage: String
+            url: String
         }`
     )
 }
@@ -77,16 +77,15 @@ exports.createSchemaCustomization = ({ actions }) => {
     getNodesByType(WEBSITECARBONBADGE_NODE_TYPE).forEach(node => touchNode(node))
   
     // store the response from the API in the cache
-    const cacheKey = `websitecarbon-${pluginOptions.url}`
+    const cacheKey = `websitecarbon-${pluginOptions.url.replace(/[^A-Z0-9]/ig, "_")}`
     let sourceData = await cache.get(cacheKey)
-  
     // fetch fresh data if nothing is found in the cache or a plugin option says not to cache data
     if (!sourceData) {
         const fetch = require('node-fetch');
         const response = await fetch(`https://api.websitecarbon.com/b?url=${encodeURIComponent(pluginOptions.url)}`);
         const data = await response.json();
-        await cache.set(cacheKey, data)
         sourceData = { co2: data.c, percentage: data.p, url: pluginOptions.url }
+        await cache.set(cacheKey, sourceData)
     }
     
     // create Gatsby nodes for the data
